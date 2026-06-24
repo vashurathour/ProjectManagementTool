@@ -168,10 +168,10 @@ router.delete(
   asyncHandler(async (req, res, next) => {
     const team_id = req.params.id;
     const project_id = req.params.projectId;
-    const project = await Project.delete({
+    const project = await Project.destroy({
       where: { id: project_id },
     });
-    res.status(202);
+    res.status(202).json({ message: "Project deleted" });
   })
 );
 
