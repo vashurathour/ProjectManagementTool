@@ -45,5 +45,5 @@ app.use((err, req, res, next) => {
     stack: isProduction ? null : err.stack,
   });
 });
-
+module.exports = app;
 
